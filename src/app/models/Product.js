@@ -11,7 +11,7 @@ class Product extends Model {
         url: {
           type: Sequelize.VIRTUAL,
           get() {
-            return `${process.env.BASE_URL}${this.path}`;
+            return `${import.meta.env.VITE_API_URL}/product-file/${this.path}`;
           },
         },
       },
